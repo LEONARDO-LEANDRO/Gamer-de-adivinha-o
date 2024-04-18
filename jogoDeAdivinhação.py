@@ -17,9 +17,26 @@ print('(1)- Fácil, (2)- Médio, (3)- Difícil, (4)- Hardcore')
 
 nivel = int(input("Defina um nível:"))
 
+#Vamos mudar o número de tentativas  conforme a dificuldade
+
+if(nivel == 1):
+    numeroTentativas = 15
+
+elif(nivel == 2):
+    numeroTentativas = 8
+
+elif(nivel == 3):
+    numeroTentativas = 5
+elif(nivel == 4):
+    numeroTentativas = 3
+
+else:
+    numeroTentativas = 2
+    print('Incompleto')
+
 while(rodada <= numeroTentativas):
     print('Você tem somente algumas chances -->' ,numeroTentativas,', Não desperdice, verme insolente!!')
-    print('Tentativa', rodada, 'de' , numeroTentativas)
+    
     
 #Recebendo o chute do jogador
     chuteString = input('Digite um número entre 1 e 100: ')
