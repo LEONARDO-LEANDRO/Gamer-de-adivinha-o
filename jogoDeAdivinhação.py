@@ -9,7 +9,7 @@ numeroSecreto = random.randrange(1,101)
 #print(numeroSecreto)
 
 #Definindo o número de tentativas
-numeroTentativas = 10
+numeroTentativas = 0
 rodada = 1
 
 print('Qual o nível de dificuldade?')
@@ -20,15 +20,15 @@ nivel = int(input("Defina um nível:"))
 #Vamos mudar o número de tentativas  conforme a dificuldade
 
 if(nivel == 1):
-    numeroTentativas = 15
+    numeroTentativas = 20
 
 elif(nivel == 2):
-    numeroTentativas = 8
+    numeroTentativas = 15
 
 elif(nivel == 3):
-    numeroTentativas = 5
+    numeroTentativas = 10
 elif(nivel == 4):
-    numeroTentativas = 3
+    numeroTentativas = 5
 
 else:
     numeroTentativas = 2
@@ -50,7 +50,10 @@ while(rodada <= numeroTentativas):
         print('Você errou!! O número secreto é um número menor')
     else:
         print('Você errou!! O número secreto é um número maior')
-
+    pontos_perdidos = abs(numeroSecreto - chute);
+    pontuação = pontuação - pontos_perdidos
+    numeroTentativas -= 1
     #numeroTentativas = numeroTentativas-1
     rodada = rodada +1
+
 #Aula Elif 26.02.24
